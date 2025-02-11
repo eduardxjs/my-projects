@@ -1,4 +1,4 @@
-// Inicializando variáveis para armazenar os totais de entradas, saídas e o saldo
+// Inicializando variáveis para armazenar os totais de entradas, saídas e o saldo.
 let saldo = 0;
 let totalEntradas = 0;
 let totalSaidas = 0;
