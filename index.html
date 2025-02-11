@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinFlow | Ady Fios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ady Fios - Financial Control</h1>
+
+        <form class="formulario-ady-fios" onsubmit="adicionarTransacao(event)">
+            <h2>Adicionar Transação</h2>
+            
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" placeholder="Descrição da transação" required>
+
+            <label for="valor">Valor (R$):</label>
+            <input type="number" id="valor" placeholder="Valor da transação" step="0.01" min="0.01" required>
+
+            <label for="tipo">Tipo:</label>
+            <select id="tipo">
+                <option value="entrada">Entrada</option>
+                <option value="saida">Saída</option>
+            </select>
+
+            <label for="categoria">Categoria:</label>
+            <select id="categoria">
+                <option value="servicos_cabelo">Serviços de Cabelo</option>
+                <option value="servicos_estetica">Serviços de Estética</option>
+                <option value="vendas_produtos">Vendas de Produtos</option>
+                <option value="pacotes_servicos">Pacotes de Serviços</option>
+                <option value="consultoria">Consultoria e Serviços Personalizados</option>
+                <option value="salarios_comissoes">Salários e Comissões</option>
+                <option value="produtos_suprimentos">Produtos e Suprimentos</option>
+                <option value="aluguel_local">Aluguel e Despesas do Local</option>
+                <option value="marketing_publicidade">Marketing e Publicidade</option>
+                <option value="equipamentos_manutencao">Equipamentos e Manutenção</option>
+                <option value="despesas_administrativas">Despesas Administrativas</option>
+                <option value="treinamentos_cursos">Treinamentos e Cursos</option>
+                <option value="transporte_logistica">Transporte e Logística</option>
+            </select>
+
+            <button type="submit">Adicionar</button>
+        </form>
+
+        <section class="relatorio">
+            <h2>Relatório</h2>
+            <div class="totais">
+                <h3>Total de Entradas: R$ <span id="total-entradas">0.00</span></h3>
+                <h3>Total de Saídas: R$ <span id="total-saidas">0.00</span></h3>
+                <h3>Saldo Final: R$ <span id="saldo">0.00</span></h3>
+            </div>
+        </section>
+
+        <section class="historico">
+            <h2>Histórico de Movimentações</h2>
+            
+            <div class="botoes-historico">
+                <button id="limpar-historico">Limpar Histórico</button>
+                <button id="limpar-tudo">Limpar Todo o Histórico</button>
+            </div>
+
+            <label for="filtro-historico">Filtrar por Data:</label>
+            <input type="date" id="filtro-historico">
+
+            <ul id="lista-historico"></ul>
+            <div id="paginacao"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
